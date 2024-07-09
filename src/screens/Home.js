@@ -51,6 +51,11 @@ const Home = ({ navigation }) => {
     // Renderiza la interfaz del componente Home
     return (
         <View style={styles.container}>
+            {/* Texto pequeño estilo términos y condiciones */}
+            <Text style={styles.licenseText}>
+                Este trabajo está marcado con CC0 1,0
+            </Text>
+
             <Text style={styles.title}>Productos Disponibles</Text>
 
             {/* Muestra la lista de productos si hay elementos, de lo contrario muestra un mensaje */}
@@ -63,14 +68,14 @@ const Home = ({ navigation }) => {
                     contentContainerStyle={styles.list}
                 />
                 : 
-                <Text style={styles.Subtitle}>No hay productos disponibles</Text>
+                <Text style={styles.subtitle}>No hay productos disponibles</Text>
             }
 
             {/* Botón para navegar a la pantalla de agregar productos */}
             <TouchableOpacity
-                style={styles.Button}
+                style={styles.button}
                 onPress={goToAdd}>
-                <Text style={styles.ButtonText}>Agregar Producto</Text>
+                <Text style={styles.buttonText}>Agregar Producto</Text>
             </TouchableOpacity>
         </View>
     );
@@ -94,14 +99,14 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         marginBottom: 20,
     },
-    Subtitle: {
+    subtitle: {
         fontSize: 20,
         fontWeight: 'bold',
         textAlign: 'center',
         marginBottom: 10,
-        color:'#ff9800'
+        color: '#ff9800'
     },
-    Button: {
+    button: {
         backgroundColor: '#0288d1',
         padding: 10,
         borderRadius: 5,
@@ -109,12 +114,19 @@ const styles = StyleSheet.create({
         marginHorizontal: 50,
         paddingVertical: 20,
     },
-    ButtonText: {
+    buttonText: {
         color: 'white',
         fontWeight: 'bold',
         textAlign: 'center',
     },
     list: {
         flexGrow: 1,
+    },
+    licenseText: {
+        fontSize: 10,
+        textAlign: 'center',
+        marginTop: 10,
+        fontStyle: 'italic',
+        color: '#666', // Color gris oscuro para el texto pequeño
     },
 });
